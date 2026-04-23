@@ -1,25 +1,33 @@
-# SDN Simulation Project: The Orange Problem
-**Individual Project | Mininet & POX Controller**
+# SDN Simulation Project: The Orange Problem & Port Monitoring
+**Course Project | PES University** **Student:** Dwije (PES2UG24CS163)
 
-##  Problem Overview
-The "Orange Problem" is a Software Defined Networking (SDN) challenge designed to demonstrate the separation of the control plane and data plane. The goal is to create a smart controller that manages a network topology, implements a security "firewall" to isolate specific traffic, and monitors the physical state of network ports.
+## 🎯 Overview
+This project implements a Software Defined Networking (SDN) solution using the **POX Controller** and **Mininet**. It demonstrates the dynamic management of network flows, security enforcement via traffic filtering, and real-time network health monitoring.
 
-### Objectives:
-* **Dynamic Learning:** Implement an L2 Learning Switch that populates flow tables based on source MAC addresses.
-* **Security Filtering:** Create an explicit flow rule (The Orange Filter) to block all traffic from a specific untrusted host (**Host 3**).
-* **Network Monitoring:** Detect and log port status changes (Up/Down events) in real-time.
+### Key Features:
+1. **L2 Learning Switch:** Dynamically populates flow tables to enable efficient packet forwarding.
+2. **Orange Filter (Security):** An explicit security policy that identifies and blocks all traffic from **Host 3** (MAC: `00:00:00:00:00:03`).
+3. **Port Status Monitoring:** A real-time tool that detects and logs switch port events (Up/Down/Modified), satisfying the requirement for network observability.
 
 ---
 
-##  System Architecture
-* **Controller:** POX (Python-based OpenFlow Controller)
-* **Emulator:** Mininet
+## 🏗️ System Architecture
+* **Control Plane:** POX Controller (Python-based)
+* **Data Plane:** Mininet with Open vSwitch
 * **Protocol:** OpenFlow 1.0
-* **Topology:** Single Open vSwitch ($S1$) connected to three Hosts ($H1, H2, H3$).
+* **Topology:** Single Switch ($S1$) connected to three Hosts ($H1, H2, H3$).
+
+
 
 ---
 
-##  Setup & Execution
+## 🚀 Setup & Execution
 
-### 1. Prerequisites
-Ensure your environment (Ubuntu/WSL2) has Mininet and POX installed:
+### Prerequisites
+Ensure your environment (WSL2/Ubuntu) has Mininet and the POX framework installed.
+
+### Steps to Run:
+1. **Start the POX Controller:**
+   ```bash
+   cd ~/pox
+   python3 pox.py orange_pox
