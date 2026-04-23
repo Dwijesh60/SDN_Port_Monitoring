@@ -31,3 +31,6 @@ Ensure your environment (WSL2/Ubuntu) has Mininet and the POX framework installe
    ```bash
    cd ~/pox
    python3 pox.py orange_pox
+
+
+<img width="1919" height="652" alt="Screenshot 2026-04-14 160532" src="https://github.com/user-attachments/assets/2e46d955-552d-4da6-b579-a5c1bc5a8951" />
